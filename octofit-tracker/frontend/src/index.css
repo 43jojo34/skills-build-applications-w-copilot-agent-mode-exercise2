@@ -37,3 +37,138 @@ button,
 a {
   -webkit-tap-highlight-color: transparent;
 }
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.app-header {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: var(--ink);
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.brand img {
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: contain;
+}
+
+.brand strong {
+  color: var(--leaf);
+}
+
+.header-label,
+.eyebrow {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+.app-main {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+.app-nav .nav-link {
+  color: var(--muted);
+}
+
+.app-nav .nav-link.active {
+  color: #fff;
+  background-color: var(--leaf);
+}
+
+.dashboard-panel,
+.collection-panel {
+  border-radius: 1.25rem;
+  background-color: rgba(255, 255, 255, 0.94);
+}
+
+.dashboard-panel .card-body {
+  padding: clamp(1.5rem, 5vw, 3rem);
+}
+
+.collection-panel .card-body {
+  min-height: 18rem;
+}
+
+.service-status {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.status-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background-color: #9aa59d;
+}
+
+.status-dot.connected {
+  background-color: #36a269;
+}
+
+.status-dot.unavailable,
+.status-dot.disconnected {
+  background-color: #e0a12f;
+}
+
+.status-divider {
+  width: 1px;
+  height: 1rem;
+  margin: 0 0.25rem;
+  background-color: var(--line);
+}
+
+.item-card {
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: #fff;
+}
+
+.item-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.item-metrics span {
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  background: #f1f5ee;
+}
+
+.rank-badge {
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: 0 0 2.5rem;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--lime);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.score-value {
+  color: var(--leaf);
+  white-space: nowrap;
+}
