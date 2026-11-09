@@ -1,10 +1,17 @@
 import CollectionPage from './CollectionPage.jsx'
+import { apiUrl } from '../api.js'
+
+const endpoint = apiUrl(
+  'teams',
+  (name) => `https://${name}-8000.app.github.dev/api/teams/`,
+)
 
 export default function Teams() {
   return (
     <CollectionPage
       title="Teams"
       resource="teams"
+      endpoint={endpoint}
       emptyMessage="No teams have been created yet."
       renderItem={(team, index) => (
         <div className="col-12 col-lg-6" key={team._id ?? index}>

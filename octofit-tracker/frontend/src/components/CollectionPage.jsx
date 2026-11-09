@@ -1,7 +1,7 @@
 import useCollection from './useCollection.js'
 
-export default function CollectionPage({ title, resource, emptyMessage, renderItem }) {
-  const { items, status, error } = useCollection(resource)
+export default function CollectionPage({ title, resource, endpoint, emptyMessage, renderItem }) {
+  const { items, status, error } = useCollection(resource, endpoint)
 
   return (
     <section className="collection-panel card border-0 shadow-sm">

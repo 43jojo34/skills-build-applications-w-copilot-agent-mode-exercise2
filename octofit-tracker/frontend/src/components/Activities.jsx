@@ -1,4 +1,10 @@
 import CollectionPage from './CollectionPage.jsx'
+import { apiUrl } from '../api.js'
+
+const endpoint = apiUrl(
+  'activities',
+  (name) => `https://${name}-8000.app.github.dev/api/activities/`,
+)
 
 function formatDate(value) {
   if (!value) return 'Date unavailable'
@@ -11,6 +17,7 @@ export default function Activities() {
     <CollectionPage
       title="Activities"
       resource="activities"
+      endpoint={endpoint}
       emptyMessage="No activities have been recorded yet."
       renderItem={(activity, index) => (
         <div className="col-12 col-lg-6" key={activity._id ?? index}>

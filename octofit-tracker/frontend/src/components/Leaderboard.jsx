@@ -1,10 +1,17 @@
 import CollectionPage from './CollectionPage.jsx'
+import { apiUrl } from '../api.js'
+
+const endpoint = apiUrl(
+  'leaderboard',
+  (name) => `https://${name}-8000.app.github.dev/api/leaderboard/`,
+)
 
 export default function Leaderboard() {
   return (
     <CollectionPage
       title="Leaderboard"
       resource="leaderboard"
+      endpoint={endpoint}
       emptyMessage="The leaderboard is waiting for its first score."
       renderItem={(entry, index) => (
         <div className="col-12 col-lg-6" key={entry._id ?? index}>

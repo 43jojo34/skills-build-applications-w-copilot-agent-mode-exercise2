@@ -7,7 +7,11 @@ const apiRoot = hasCodespaceName
   ? `https://${codespaceName}-8000.app.github.dev/api`
   : '/api'
 
-export function apiUrl(resource) {
+export function apiUrl(
+  resource,
+  codespaceUrl = (name) => `https://${name}-8000.app.github.dev/api/${resource}/`,
+) {
+  if (hasCodespaceName) return codespaceUrl(codespaceName)
   return `${apiRoot}/${resource}/`
 }
 

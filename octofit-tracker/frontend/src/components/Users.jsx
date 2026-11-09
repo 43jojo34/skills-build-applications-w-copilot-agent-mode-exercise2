@@ -1,10 +1,17 @@
 import CollectionPage from './CollectionPage.jsx'
+import { apiUrl } from '../api.js'
+
+const endpoint = apiUrl(
+  'users',
+  (name) => `https://${name}-8000.app.github.dev/api/users/`,
+)
 
 export default function Users() {
   return (
     <CollectionPage
       title="Users"
       resource="users"
+      endpoint={endpoint}
       emptyMessage="No users have joined yet."
       renderItem={(user, index) => (
         <div className="col-12 col-lg-6" key={user._id ?? index}>

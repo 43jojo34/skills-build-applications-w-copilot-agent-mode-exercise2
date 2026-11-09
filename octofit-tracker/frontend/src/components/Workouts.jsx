@@ -1,10 +1,17 @@
 import CollectionPage from './CollectionPage.jsx'
+import { apiUrl } from '../api.js'
+
+const endpoint = apiUrl(
+  'workouts',
+  (name) => `https://${name}-8000.app.github.dev/api/workouts/`,
+)
 
 export default function Workouts() {
   return (
     <CollectionPage
       title="Workouts"
       resource="workouts"
+      endpoint={endpoint}
       emptyMessage="No workout suggestions are available yet."
       renderItem={(workout, index) => (
         <div className="col-12 col-lg-6" key={workout._id ?? index}>

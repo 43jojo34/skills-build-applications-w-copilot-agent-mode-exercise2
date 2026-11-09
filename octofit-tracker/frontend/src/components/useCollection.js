@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import { apiUrl, toCollection } from '../api.js'
+import { toCollection } from '../api.js'
 
-export default function useCollection(resource) {
+export default function useCollection(resource, endpoint) {
   const [items, setItems] = useState([])
   const [status, setStatus] = useState('loading')
   const [error, setError] = useState('')
@@ -9,7 +9,7 @@ export default function useCollection(resource) {
   useEffect(() => {
     const controller = new AbortController()
 
-    fetch(apiUrl(resource), { signal: controller.signal })
+    fetch(endpoint, { signal: controller.signal })
       .then((response) => {
         if (!response.ok) throw new Error(`Request failed (${response.status})`)
         return response.json()
@@ -25,7 +25,7 @@ export default function useCollection(resource) {
       })
 
     return () => controller.abort()
-  }, [resource])
+  }, [endpoint, resource])
 
   return { items, status, error }
 }
