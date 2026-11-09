@@ -30,6 +30,9 @@ const workouts = [
   { title: 'Full Body Strength', description: 'A balanced strength session for the whole body.', activityType: 'strength', durationMinutes: 45, difficulty: 'intermediate' },
 ] as const;
 
+/**
+ * Seed the octofit_db database with test data
+ */
 async function seedDatabase(): Promise<void> {
   try {
     await mongoose.connect(connectionString);
